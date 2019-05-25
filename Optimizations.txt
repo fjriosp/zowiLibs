@@ -1,0 +1,7 @@
+-- Orig:
+El Sketch usa 26534 bytes (92%) del espacio de almacenamiento de programa. El máximo es 28672 bytes.
+Las variables Globales usan 1684 bytes (82%) de la memoria dinámica, dejando 364 bytes para las variables locales. El máximo es 2048 bytes.
+
+-- SerialCommand (Command as char)
+El Sketch usa 26366 bytes (91%) del espacio de almacenamiento de programa. El máximo es 28672 bytes.
+Las variables Globales usan 1180 bytes (57%) de la memoria dinámica, dejando 868 bytes para las variables locales. El máximo es 2048 bytes.
