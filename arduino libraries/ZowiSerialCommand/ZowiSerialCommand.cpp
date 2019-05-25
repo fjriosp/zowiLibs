@@ -73,7 +73,7 @@ void ZowiSerialCommand::readSerial()
 			for (i=0; i<numCommand; i++) {
 				
 				// Compare the found command against the list of known commands for a match
-				if (strncmp(token,CommandList[i].command,SERIALCOMMANDBUFFER) == 0) 
+				if (token[0] == CommandList[i].command) 
 				{
 					
 					// Execute the stored handler function for the command
@@ -101,11 +101,11 @@ void ZowiSerialCommand::readSerial()
 // Adds a "command" and a handler function to the list of available commands.  
 // This is used for matching a found token in the buffer, and gives the pointer
 // to the handler function to deal with it. 
-void ZowiSerialCommand::addCommand(const char *command, void (*function)())
+void ZowiSerialCommand::addCommand(const char command, void (*function)())
 {
 	if (numCommand < MAXSERIALCOMMANDS) {
 				
-		strncpy(CommandList[numCommand].command,command,SERIALCOMMANDBUFFER); 
+		CommandList[numCommand].command = command; 
 		CommandList[numCommand].function = function; 
 		numCommand++; 
 	} 

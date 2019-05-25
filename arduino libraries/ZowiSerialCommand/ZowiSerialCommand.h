@@ -33,7 +33,7 @@ class ZowiSerialCommand
 		void clearBuffer();   // Sets the command buffer to all '\0' (nulls)
 		char *next();         // returns pointer to next token found in command buffer (for getting arguments to commands)
 		void readSerial();    // Main entry point.  
-		void addCommand(const char *, void(*)());   // Add commands to processing dictionary
+		void addCommand(const char, void(*)());   // Add commands to processing dictionary
 		void addDefaultHandler(void (*function)());    // A handler to call when no valid command received. 
 	
 	private:
@@ -45,7 +45,7 @@ class ZowiSerialCommand
 		char *token;                        // Returned token from the command buffer as returned by strtok_r
 		char *last;                         // State variable used by strtok_r during processing
 		typedef struct _callback {
-			char command[SERIALCOMMANDBUFFER];
+			char command;
 			void (*function)();
 		} ZowiSerialCommandCallback;            // Data structure to hold Command/Handler function key-value pairs
 		int numCommand;
